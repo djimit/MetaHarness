@@ -12,7 +12,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, feat/receipt-export-import]
   workflow_dispatch:
 
 permissions:
@@ -27,6 +27,37 @@ env:
   RUST_BACKTRACE: short
 
 jobs:
+  dependency-scopes:
+    name: Dependency scopes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install and audit all three lockfiles, including development tools
+        run: |
+          npm ci
+          npm --prefix apps/web-ui ci
+          npm --prefix services/apicompletions ci
+          npm audit --audit-level=high
+          npm --prefix apps/web-ui audit --audit-level=high
+          npm --prefix services/apicompletions audit --audit-level=high
+      - name: Web UI and API checks
+        run: |
+          npm --prefix apps/web-ui test
+          npm --prefix apps/web-ui run build
+          npm --prefix services/apicompletions run lint
+          npm --prefix services/apicompletions run build
+          npm --prefix services/apicompletions test
+      - name: Dependency regression controls
+        run: node --test scripts/dependency-security.test.mjs
+      - name: Browser controls (desktop and mobile)
+        working-directory: apps/web-ui
+        run: |
+          npx playwright install --with-deps chromium
+          npm run e2e
+
   # ─────────────────────────────────────────────────────────────────────
   # Rust workspace — 3 platforms
   # ─────────────────────────────────────────────────────────────────────
@@ -238,7 +269,7 @@ jobs:
   # ─────────────────────────────────────────────────────────────────────
   ci-pass:
     name: CI passed
-    needs: [rust, wasm, node, pack-install, bench]
+    needs: [rust, wasm, node, pack-install, bench, dependency-scopes]
     runs-on: ubuntu-latest
     steps:
       - run: echo "All cross-platform gates green."
