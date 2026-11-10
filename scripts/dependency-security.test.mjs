@@ -12,6 +12,9 @@ const floors = {
   'source-map-js': [1, 2, 2],
   nanoid: [3, 3, 18],
   'body-parser': [2, 4, 0],
+  vitest: [4, 1, 12],
+  '@vitest/mocker': [4, 1, 12],
+  'postcss-selector-parser': [6, 1, 5],
 };
 
 for (const scope of scopes) {
@@ -32,7 +35,7 @@ for (const scope of scopes) {
       assert.equal(version[0], floor[0], `${path}: unexpected major`);
       assert.ok(version[1] > floor[1] || (version[1] === floor[1] && version[2] >= floor[2]), `${path}@${pkg.version} is vulnerable`);
     }
-    for (const name of ['vite', 'source-map-js', 'nanoid']) assert.ok(seen.has(name), `${name} absent`);
+    for (const name of ['vite', 'source-map-js', 'nanoid', 'vitest', '@vitest/mocker']) assert.ok(seen.has(name), `${name} absent`);
     if (scope.includes('web-ui')) {
       for (const name of ['adm-zip', 'sharp', 'browserslist']) assert.ok(seen.has(name), `${name} absent`);
     }

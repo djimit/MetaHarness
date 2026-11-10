@@ -31,11 +31,13 @@
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3",
     "vite": "^8.3.5",
-    "vitest": "^3.2.6"
+    "vite-node": "^6.0.0",
+    "vitest": "^4.1.12"
   },
   "overrides": {
     "adm-zip": "^0.6.1",
     "postcss": "^8.5.18",
+    "postcss-selector-parser": "^6.1.5",
     "protobufjs": "^7.6.5",
     "sharp": "^0.35.5",
     "tinypool": "^2.1.2"

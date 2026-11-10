@@ -72,7 +72,7 @@
   },
   "devDependencies": {
     "typescript": "^5.4.0",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.12"
   },
   "publishConfig": {
     "access": "public"

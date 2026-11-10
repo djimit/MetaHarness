@@ -44,7 +44,7 @@
   "devDependencies": {
     "@ruvector/tiny-dancer": "^0.1.21",
     "typescript": "^5.4.0",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.12"
   },
   "peerDependencies": {
     "@ruvector/tiny-dancer": "^0.1.21"
