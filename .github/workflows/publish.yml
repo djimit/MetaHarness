@@ -73,7 +73,7 @@ jobs:
         working-directory: crates/kernel-napi
         run: napi build --platform --release --target ${{ matrix.target }}
       - name: Upload native artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.artifact }}
           path: crates/kernel-napi/*.node
@@ -95,7 +95,7 @@ jobs:
       - name: Build wasm
         run: wasm-pack build crates/kernel-wasm --target bundler --release --out-dir ../../packages/kernel-js/pkg
       - name: Upload wasm artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: kernel-wasm
           path: packages/kernel-js/pkg/
