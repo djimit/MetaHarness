@@ -42,12 +42,12 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
-    "@ruvector/tiny-dancer": "^0.1.21",
+    "@ruvector/tiny-dancer": "^0.1.26",
     "typescript": "^5.4.0",
     "vitest": "^4.1.12"
   },
   "peerDependencies": {
-    "@ruvector/tiny-dancer": "^0.1.21"
+    "@ruvector/tiny-dancer": "^0.1.26"
   },
   "peerDependenciesMeta": {
     "@ruvector/tiny-dancer": {
