@@ -73,7 +73,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # iter 78: post-deploy verification. The deploy step above can succeed
   # (status 200 from the Pages API) while the served URL is still serving
