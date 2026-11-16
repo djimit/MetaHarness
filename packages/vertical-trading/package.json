@@ -43,7 +43,7 @@
     "@metaharness/vertical-base": "^0.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^26.6.6",
     "typescript": "^5.4.0",
     "vitest": "^4.1.12"
   },

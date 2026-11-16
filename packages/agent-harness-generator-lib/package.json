@@ -46,7 +46,7 @@
     "metaharness": "0.1.5"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^26.6.6",
     "typescript": "^5.4.0",
     "vitest": "^4.1.12"
   },
