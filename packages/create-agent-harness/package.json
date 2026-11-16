@@ -121,6 +121,6 @@
     "node": ">=20.0.0"
   },
   "optionalDependencies": {
-    "@ruvector/ruvllm": "^2.5.6"
+    "@ruvector/ruvllm": "^4.2.1"
   }
 }
