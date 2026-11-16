@@ -130,7 +130,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v2
       - name: Fetch NPM_TOKEN from GCP Secret Manager
         id: secrets
-        uses: google-github-actions/get-secretmanager-secrets@v2
+        uses: google-github-actions/get-secretmanager-secrets@v3
         with:
           secrets: |-
             npm_token:${{ env.GCP_PROJECT_ID }}/NPM_TOKEN
@@ -222,7 +222,7 @@ jobs:
         # Optional — only runs when PINATA_JWT exists in Secret Manager.
         # First-time releases or org-locked orgs skip this gracefully.
         continue-on-error: true
-        uses: google-github-actions/get-secretmanager-secrets@v2
+        uses: google-github-actions/get-secretmanager-secrets@v3
         with:
           secrets: |-
             pinata_jwt:${{ env.GCP_PROJECT_ID }}/PINATA_JWT
