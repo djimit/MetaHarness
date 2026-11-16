@@ -27,7 +27,7 @@
     "pretest": "npm run build"
   },
   "devDependencies": {
-    "@napi-rs/cli": "^3.0.0",
+    "@napi-rs/cli": "^3.10.12",
     "@types/node": "^20.0.0",
     "typescript": "^5.4.0",
     "vitest": "^4.1.12"
