@@ -17,16 +17,16 @@
     "emulators": "docker compose -f docker-compose.emulators.yml up"
   },
   "dependencies": {
-    "express": "^5.2.1",
+    "express": "^5.3.0",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
+    "@types/express": "^5.0.6",
     "@types/node": "^20.11.0",
-    "@types/supertest": "^6.0.2",
+    "@types/supertest": "^7.2.1",
     "@vitest/coverage-v8": "^4.1.12",
-    "supertest": "^7.0.0",
-    "tsx": "^4.7.0",
+    "supertest": "^7.3.2",
+    "tsx": "^4.23.15",
     "typescript": "^5.4.0",
     "vitest": "^4.1.12"
   },
