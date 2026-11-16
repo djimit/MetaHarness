@@ -27,7 +27,7 @@
   "keywords": ["agent", "harness", "self-improvement", "flywheel", "promotion", "lineage", "receipts", "metaharness"],
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.4.0",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.12"
   }
 }
