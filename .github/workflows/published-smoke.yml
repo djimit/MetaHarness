@@ -267,7 +267,7 @@ jobs:
     if: failure() && github.event_name == 'schedule'
     steps:
       - name: Open issue on scheduled-cron failure
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             // Only fires on the daily cron path — push-failures already
